@@ -56,7 +56,7 @@ generatePasswordButton.addEventListener("click", () => {
 })
 
 copyPasswordButton.addEventListener("click", (e) => {
-    e.preventDefault();
+    e.preventDefault()
   
     const password = generatedPasswordElement.querySelector("h4").innerText
   
@@ -68,7 +68,8 @@ copyPasswordButton.addEventListener("click", (e) => {
     }, 1000)
 })
 
-closePasswordButton.addEventListener("click", () => {
+closePasswordButton.addEventListener("click", (e) => {
+    e.preventDefault()
     closePasswordButton.style.backgroundColor = "#fd4949"
 
     generatedPasswordElement.style.opacity = "0"
