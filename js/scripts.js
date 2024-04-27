@@ -1,6 +1,7 @@
 const generatePasswordButton = document.querySelector("#generate-password")
 const generatedPasswordElement = document.querySelector("#generated-password")
-const copyPasswordButton = document.querySelector("#generated-password").querySelector("button")
+const copyPasswordButton = document.querySelector(".buttons").querySelector("#copy-password")
+const closePasswordButton = document.querySelector(".buttons").querySelector("#close-password")
 
 const getLetterLowerCase = () => {
     return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
@@ -40,7 +41,8 @@ const generatePassword = (getLetterLowerCase, getLetterUpperCase, getNumber, get
 
     password = password.slice(0, passwordLength)
 
-    generatedPasswordElement.style.display = "block"
+    generatedPasswordElement.style.opacity = "1"
+    generatedPasswordElement.style.position = "relative"
     generatedPasswordElement.querySelector(".password-info").querySelector("h4").innerText = password
 }
 
@@ -64,4 +66,14 @@ copyPasswordButton.addEventListener("click", (e) => {
     setTimeout(() => {
         copyPasswordButton.style.backgroundColor = "#bbbbbb"
     }, 1000)
+})
+
+closePasswordButton.addEventListener("click", () => {
+    closePasswordButton.style.backgroundColor = "#fd4949"
+
+    generatedPasswordElement.style.opacity = "0"
+
+    setTimeout(() => {
+        generatedPasswordElement.style.position = "absolute"
+    }, 500)
 })

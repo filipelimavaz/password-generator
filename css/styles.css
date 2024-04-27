@@ -49,7 +49,6 @@ h1 {
 #register-form {
     background-color: #ffffff;
     padding: 2rem;
-    width: 50%;
     display: flex;
     flex-direction: column;
     opacity: 0.9;
@@ -110,16 +109,30 @@ h1 {
     margin-left: 37%;
 }
 
-.password-info button {
-    border: none;
-    background-color: #bbbbbb;
-    border-radius: 50%;
+.password-info .buttons {
     margin-left: auto;
-    cursor: pointer;
-    transition: 0.5s;
+    transition: 3s;
+    display: flex;
+    gap: 0.3rem;
 }
 
-#generated-password button i {
+.password-info .buttons button {
+    border: none;
+    background-color: #bbbbbb;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 0.1rem;
+}
+
+.password-info .buttons #copy-password {
+    background-color: #bbbbbb;
+}
+
+.password-info .buttons #close-password {
+    background-color: #ff8181;
+}
+
+.password-info .buttons i {
     color: #ffffff;
     padding: 0.6rem;
 }
@@ -133,7 +146,9 @@ h1 {
     color: #333333;
     text-align: center;
     margin-bottom: 1rem;
-    display: none;
+    opacity: 0;
+    position: absolute;
+    transition: 0.5s;
 }
 
 #register-form #generated-password p {
@@ -159,4 +174,10 @@ h1 {
 #register-form input[type="submit"]:hover {
     background-color: #315a10;
     opacity: 1;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        display: none;
+    }
 }
